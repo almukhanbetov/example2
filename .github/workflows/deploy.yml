@@ -26,7 +26,7 @@ jobs:
         username: root
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "app"
-        target: "/opt/halkbank/simple2"
+        target: "/opt/halkbank/example2"
 
     - name: Run the app via SSH
       uses: appleboy/ssh-action@v1.0.3
@@ -36,4 +36,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           pkill app || true
-          nohup /opt/halkbank/simple2/app/app > /opt/halkbank/simple2/app/log.txt 2>&1 &
+          nohup /opt/halkbank/example2/app/app > /opt/halkbank/example2/app/log.txt 2>&1 &
